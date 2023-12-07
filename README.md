@@ -25,7 +25,7 @@ Step 1: Install and configure Apache http server
         sudo systemctl enable --now httpd
 
 Step 2: Clone the repo in the /var/www/html directory
-        sudo git clone 
+        sudo git clone https://github.com/Atishaysjain/orcale-tuning-index-recommendation-tool
 
 Step 3: Uncomment /etc/httpd/conf/httpd.conf file with following
         <Directory "/var/www/cgi-bin">

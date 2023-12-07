@@ -17,6 +17,7 @@
 2. Roshan (017410718)
 - UI Creation
 - Schema Creation
+- load generator
 - Documentation
 
 ### Setting up and Running the project

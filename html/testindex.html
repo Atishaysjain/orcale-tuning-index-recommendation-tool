@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+ 
+
+<head>
+
+    <title>Oracle</title>
+ <!-- <script src="/var/www/html/jquery-3.6.0.min.js"></script> -->
+<script type='text/javascript' src="jquery-3.6.0.min.js"></script> 
+
+   </head>
+
+ 
+
+<body>
+
+    <base target="_blank" rel="noopener noreferrer">
+
+    <h1>Full Table Scan Index Recommendation</h1>
+
+        <br>
+
+    <br>
+
+    <form action="/cgi-bin/ora.sh" method="POST">
+
+        <label>Type of Operation </label>
+
+               <select name="operationType" id="operationType">
+
+               <option value="FTS">FTS</option>
+               <option value="FTSIND">FTSIND</option>
+               <option value="GETS">GETS</option>
+
+        </select>
+
+
+         Enter DB TNS: <input type="text" name="username"></input>
+
+
+
+        <br>
+
+        <br>
+
+
+
+        <input type="submit" name="subbtn" value="Submit"/>
+
+
+    <form>
+
+</body>
+
+<span id="extraInput20">
+            Enter sql_id : <input type="text" name="sqlid" />
+</span> 
+<span id="extraInput30">
+            Enter Time(1 for last one hour)   : <input type="text" name="hrn" />
+</span> 
+<script>
+    $(function() {
+    $('#extraInput30').show();
+    $('#extraInput20').hide();
+    $('#operationType').change(function(){
+        if($('#operationType').val() == 'FTS') {
+            $('#extraInput30').show();
+    $('#extraInput20').hide();
+        } 
+else if($('#operationType').val() == 'FTSIND') {
+$('#extraInput20').show();
+            $('#extraInput30').hide();
+        }
+else if($('#operationType').val() == 'GETS') {
+$('#extraInput20').show();
+            $('#extraInput30').hide();
+        }
+else {
+            $('#extraInput30').hide();
+            $('#extraInput20').hide();
+        }
+    });
+});
+</script>
+</html>
